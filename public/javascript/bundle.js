@@ -46,6 +46,8 @@
 
 	'use strict';
 	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
 	__webpack_require__(1);
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -60,11 +62,55 @@
 	  function Game() {
 	    _classCallCheck(this, Game);
 	
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Game).call(this, 800, 600, Phaser.CANVAS, 'content', null));
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Game).call(this, 500, 500, Phaser.AUTO, 'content', null));
+	
+	    _this.state.add('GameState', GameState, false);
+	    _this.state.start('GameState');
+	    return _this;
 	  }
 	
 	  return Game;
 	}(Phaser.Game);
+	
+	var GameState = function (_Phaser$State) {
+	  _inherits(GameState, _Phaser$State);
+	
+	  function GameState() {
+	    _classCallCheck(this, GameState);
+	
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(GameState).apply(this, arguments));
+	  }
+	
+	  _createClass(GameState, [{
+	    key: 'preload',
+	    value: function preload() {
+	      this.game.load.image('mushroom', '/images/mushroom2.png');
+	    }
+	  }, {
+	    key: 'create',
+	    value: function create() {
+	      var center = { x: this.game.world.centerX, y: this.game.world.centerY };
+	      var player = new Player(this.game, center.x, center.y, 'mushroom');
+	    }
+	  }]);
+	
+	  return GameState;
+	}(Phaser.State);
+	
+	var Player = function (_Phaser$Sprite) {
+	  _inherits(Player, _Phaser$Sprite);
+	
+	  function Player(game, x, y, key) {
+	    _classCallCheck(this, Player);
+	
+	    var _this3 = _possibleConstructorReturn(this, Object.getPrototypeOf(Player).call(this, game, x, y, key));
+	
+	    _this3.game.stage.addChild(_this3);
+	    return _this3;
+	  }
+	
+	  return Player;
+	}(Phaser.Sprite);
 	
 	new Game();
 
