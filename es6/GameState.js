@@ -3,7 +3,7 @@ import Player from './Player'
 class GameState extends Phaser.State {
   preload() {
     this.game.load.image('mushroom', '/images/mushroom2.png');
-    this.game.load.image('background', '/images/donald_duck.jpg');
+    this.game.load.image('background', '/images/donald_duck.png');
   }
 
   create() {
@@ -11,7 +11,7 @@ class GameState extends Phaser.State {
     this.game.physics.startSystem(Phaser.Physics.Arcade);
     this.game.add.sprite(this.game, 0, 0, 'background');
     this.player = new Player(this.game, center.x, center.y, 'mushroom');
-    this.game.physics.arcade.enable(this.player);r
+    this.game.physics.arcade.enable(this.player);
     this.cursors = this.game.input.keyboard.createCursorKeys();
   }
 
