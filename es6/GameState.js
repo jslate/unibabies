@@ -1,15 +1,15 @@
-import Player from './Player'
+import Player from './Player';
+import Layer from './Layer';
 
 class GameState extends Phaser.State {
   preload() {
     this.game.load.image('mushroom', '/images/mushroom2.png');
-    this.game.load.image('background', '/images/donald_duck.png');
+    // this.game.load.sound();
   }
 
   create() {
     const center = { x: this.game.world.centerX, y: this.game.world.centerY }
     this.game.physics.startSystem(Phaser.Physics.Arcade);
-    this.game.add.sprite(this.game, 0, 0, 'background');
     this.player = new Player(this.game, center.x, center.y, 'mushroom');
     this.game.physics.arcade.enable(this.player);
     this.cursors = this.game.input.keyboard.createCursorKeys();
