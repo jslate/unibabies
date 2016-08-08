@@ -4,8 +4,14 @@ class Character extends Phaser.Sprite {
     this.game.stage.addChild(this);
   }
 
-  speak(message) {
-    $('#speech').text(message);
+  speak(message, name) {
+    var fullMessage;
+    if (name != null) {
+      fullMessage = name + ' - ' + message;
+    } else {
+      fullMessage = message;
+    }
+    $('#speech').text(fullMessage);
   }
 }
 

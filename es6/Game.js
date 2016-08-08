@@ -10,7 +10,7 @@ window.jQuery = jQuery;
 
 class Game extends Phaser.Game {
   constructor() {
-    super(500, 500, Phaser.AUTO, 'thegame', null);
+    super(800, 600, Phaser.AUTO, 'thegame', null);
     this.state.add('Scene', Scene, false);
     this.state.add('Level', Level, false);
     this.state.start('Scene');
