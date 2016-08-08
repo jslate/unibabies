@@ -62,7 +62,7 @@
 	  function Game() {
 	    _classCallCheck(this, Game);
 	
-	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Game).call(this, 500, 500, Phaser.AUTO, 'content', null));
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Game).call(this, 800, 600, Phaser.AUTO, 'thegame', null));
 	
 	    _this.state.add('GameState', GameState, false);
 	    _this.state.start('GameState');
@@ -98,17 +98,19 @@
 	  }, {
 	    key: 'update',
 	    value: function update() {
+	      this.player.body.velocity.x = 0;
+	      this.player.body.velocity.y = 0;
 	      if (this.cursors.right.isDown) {
-	        this.player.body.velocity.x += 10;
+	        this.player.body.velocity.x = 200;
 	      }
 	      if (this.cursors.left.isDown) {
-	        this.player.body.velocity.x -= 10;
+	        this.player.body.velocity.x = -200;
 	      }
 	      if (this.cursors.up.isDown) {
-	        this.player.body.velocity.y -= 10;
+	        this.player.body.velocity.y = -200;
 	      }
 	      if (this.cursors.down.isDown) {
-	        this.player.body.velocity.y += 10;
+	        this.player.body.velocity.y = 200;
 	      }
 	    }
 	  }]);

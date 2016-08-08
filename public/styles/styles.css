@@ -1,0 +1,59 @@
+.left-column {
+  display: inline-block;
+  width: 200px;
+  vertical-align: top;
+  font-family: verdana;
+}
+
+.speech {
+  height: 300px;
+  overflow-y: scroll;
+  border: 1px solid black;
+  margin: 0 4px 4px 4px;
+}
+
+.vital_info {
+  margin: 0;
+}
+
+.vital_info_container {
+  border: 1px solid black;
+  margin: 0 4px 4px 4px;
+}
+
+#thegame {
+  display: inline-block;
+  width: 800px;  
+}
+
+.right-column {
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  vertical-align: top;
+}
+
+
+
+/*div {
+  border: 1px solid green;
+  height: 600px;
+}
+canvas {
+  margin: auto;
+}
+form {
+  float: right;
+  height: 600px;
+  border: 1px solid black;
+}
+p {
+  float: left;
+  height: 600px;
+  width: 100px;
+  font-family: verdana;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  margin: 0;
+  border: 1px solid black;
+}*/
