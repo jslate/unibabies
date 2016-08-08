@@ -1,6 +1,12 @@
 import Player from './Player'
 
 class SceneState extends Phaser.State {
+
+  constructor() {
+    super();
+    this.move_speed = 1;
+  }
+
   preload() {
     this.game.load.image('mushroom', '/images/mushroom2.png');
   }
@@ -18,7 +24,7 @@ class SceneState extends Phaser.State {
       setTimeout(() => {
         this.movePlayer(obj.distance, obj.direction, () => this.player.speak(obj.message));
       }, startAtTime);
-      startAtTime += obj.distance * 1 + obj.pause * 1000;
+      startAtTime += obj.distance * this.move_speed + obj.pause * 1000;
     });
 
   }
@@ -41,7 +47,7 @@ class SceneState extends Phaser.State {
         clearInterval(interval);
         callback();
       }
-    }, 1);
+    }, this.move_speed);
   }
 
 }
