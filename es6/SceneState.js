@@ -12,11 +12,19 @@ class SceneState extends Phaser.State {
     this.game.physics.arcade.enable(this.player);
   }
 
-  movePlayerRight(distance, callback) {
+  movePlayerRight(distance, callback) { this.movePlayer(distance, 'right', callback);  }
+  movePlayerLeft(distance, callback) { this.movePlayer(distance, 'left', callback);  }
+  movePlayerUp(distance, callback) { this.movePlayer(distance, 'up', callback);  }
+  movePlayerDown(distance, callback) { this.movePlayer(distance, 'down', callback);  }
+
+  movePlayer(distance, direction, callback) {
     let i = 0;
     let interval;
     interval = setInterval(() => {
-      this.player.x += 1;
+      if (direction == 'right') { this.player.x += 1; }
+      if (direction == 'left') { this.player.x -= 1; }
+      if (direction == 'up') { this.player.y += 1; }
+      if (direction == 'down') { this.player.y -= 1; }
       i++;
       if (i >= distance) {
         clearInterval(interval);

@@ -3,7 +3,12 @@ import SceneState from './SceneState'
 class Scene extends SceneState {
   create() {
     this.preCreate();
-    this.movePlayerRight(50, () => this.player.speak('It works!'));
+    this.movePlayerRight(100, () => {
+      this.player.speak('It works!');
+      setTimeout(() => {
+        this.movePlayerLeft(100, () => this.player.speak('Amazing, right?!'));
+      }, 2000);
+    });
   }
 
 
