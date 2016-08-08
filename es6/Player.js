@@ -1,8 +1,8 @@
-class Player extends Phaser.Sprite {
-  constructor(game, x, y, key) {
-    super(game, x, y, key);
-    this.game.stage.addChild(this);
-  }
+import Character from './Character.js'
+import $ from 'jquery';
+
+class Player extends Character {
+
 }
 
 export default Player;
