@@ -1,12 +1,4 @@
-import 'phaser-shim';
-
-class Game extends Phaser.Game {
-  constructor() {
-    super(800, 600, Phaser.AUTO, 'thegame', null);
-    this.state.add('GameState', GameState, false);
-    this.state.start('GameState');
-  }
-}
+import Player from './Player'
 
 class GameState extends Phaser.State {
   preload() {
@@ -14,7 +6,7 @@ class GameState extends Phaser.State {
   }
 
   create() {
-    let center = { x: this.game.world.centerX, y: this.game.world.centerY }
+    const center = { x: this.game.world.centerX, y: this.game.world.centerY }
     this.game.physics.startSystem(Phaser.Physics.Arcade);
     this.player = new Player(this.game, center.x, center.y, 'mushroom');
     this.game.physics.arcade.enable(this.player);
@@ -39,11 +31,4 @@ class GameState extends Phaser.State {
   }
 }
 
-class Player extends Phaser.Sprite {
-  constructor(game, x, y, key) {
-    super(game, x, y, key);
-    this.game.stage.addChild(this);
-  }
-}
-
-new Game();
+export default GameState;
