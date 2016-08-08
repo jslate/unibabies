@@ -12,6 +12,18 @@ class SceneState extends Phaser.State {
     this.game.physics.arcade.enable(this.player);
   }
 
+  moveAndTalk(array) {
+    let startAtTime = 0;
+    array.forEach((obj) => {
+      setTimeout(() => {
+        this.movePlayer(obj.distance, obj.direction, () => this.player.speak(obj.message));
+      }, startAtTime);
+      console.log(startAtTime);
+      startAtTime += obj.distance * 20;
+    });
+
+  }
+
   movePlayerRight(distance, callback) { this.movePlayer(distance, 'right', callback);  }
   movePlayerLeft(distance, callback) { this.movePlayer(distance, 'left', callback);  }
   movePlayerUp(distance, callback) { this.movePlayer(distance, 'up', callback);  }
@@ -30,7 +42,7 @@ class SceneState extends Phaser.State {
         clearInterval(interval);
         callback();
       }
-    }, 10);
+    }, 20);
   }
 
 }
