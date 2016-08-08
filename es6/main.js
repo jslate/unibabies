@@ -2,7 +2,7 @@ import 'phaser-shim';
 
 class Game extends Phaser.Game {
   constructor() {
-    super(500, 500, Phaser.AUTO, 'content', null);
+    super(800, 600, Phaser.AUTO, 'thegame', null);
     this.state.add('GameState', GameState, false);
     this.state.start('GameState');
   }
@@ -22,17 +22,19 @@ class GameState extends Phaser.State {
   }
 
   update() {
+    this.player.body.velocity.x = 0;
+    this.player.body.velocity.y = 0;
     if (this.cursors.right.isDown) {
-      this.player.body.velocity.x += 10
+      this.player.body.velocity.x = 200;
     }
     if (this.cursors.left.isDown) {
-      this.player.body.velocity.x -= 10
+      this.player.body.velocity.x = -200;
     }
     if (this.cursors.up.isDown) {
-      this.player.body.velocity.y -= 10
+      this.player.body.velocity.y = -200;
     }
     if (this.cursors.down.isDown) {
-      this.player.body.velocity.y += 10
+      this.player.body.velocity.y = 200;
     }
   }
 }

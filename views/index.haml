@@ -1,14 +1,24 @@
 !!!5
 %head
   %meta{charset: 'UTF-8'}
-  %title Hello!
+  %title Unibabies
+  %link{rel: 'stylesheet', type: 'text/css', href: '/styles/styles.css'}
+
+%body
+  .container
+    .left-column
+      %p.speech This is your captain speaking. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      .vital_info_container
+        %p.vital_info Normal Town
+        %p.vital_info Item: Bow
+        %p.vital_info $1234
+    #thegame
+    .right-column
+      %form
+        %select
+          %option Inventory
+          %option Equips
+          %option Status
+          %option Options
 
 %script{src: 'javascript/bundle.js'}
-
-%form{style: 'float:right;'}
-  %select
-    %option Inventory
-    %option Equips
-    %option Special Moves
-    %option Stats
-    %option Options
