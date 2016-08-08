@@ -6,7 +6,7 @@ class GameState extends Phaser.State {
   }
 
   create() {
-    let center = { x: this.game.world.centerX, y: this.game.world.centerY }
+    const center = { x: this.game.world.centerX, y: this.game.world.centerY }
     this.game.physics.startSystem(Phaser.Physics.Arcade);
     this.player = new Player(this.game, center.x, center.y, 'mushroom');
     this.game.physics.arcade.enable(this.player);
