@@ -3,9 +3,10 @@
   width: 200px;
   vertical-align: top;
   font-family: verdana;
+  height: 600px;
 }
 
-.speech {
+#speech {
   height: 300px;
   overflow-y: scroll;
   border: 1px solid black;
