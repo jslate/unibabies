@@ -18,8 +18,7 @@ class SceneState extends Phaser.State {
       setTimeout(() => {
         this.movePlayer(obj.distance, obj.direction, () => this.player.speak(obj.message));
       }, startAtTime);
-      console.log(startAtTime);
-      startAtTime += obj.distance * 20;
+      startAtTime += obj.distance * 20 + obj.pause * 1000;
     });
 
   }

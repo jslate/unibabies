@@ -18,7 +18,7 @@ class Game extends Phaser.Game {
     setTimeout(()=> {
       this.state.start('Level');
       this.announce('Welcome!');
-    }, 10000);
+    }, 30000);
   }
 
   announce(message) {
